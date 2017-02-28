@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="appName">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div ng-controller = "taskCtrl">
+      <input type="text" placeHolder="Task to be done" ng-model="input1">
+      <br>
+      Is it done? <input type="radio" ng-checked="true" name="status" value="yes"  ng-model="input2">-> yes
+      <input type="radio" name="status" value="no" ng-model="input2">-> no
+      <button type="button" ng-click="getInput()">Add task</button>
+      <ul>
+        <li ng-repeat="curr in tasks track by $index">Task name: {{curr.tName}} is it done? {{curr.isDone}}<button type="button" ng-click="remove($index)" >Remove</button></li>
+      </ul>
+    </div>
+    <script src= "node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src = "app.js"> </script>
+    <script type="text/javascript" src = "factory.js"></script>
+    <script type="text/javascript" src = "controller.js"></script>
+  </body>
+</html>
